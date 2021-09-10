@@ -1,44 +1,58 @@
 package no.hvl.dat100;
 
-import static java.lang.System.*;
-
-import java.util.Scanner;
+import javax.swing.*;
 
 public class OppgaveB5{
 	
-	
 	public static void main(String[] args) {
+
+		for (int i = 10; i > 0;) {
+		String karakter = "";
+		String input = JOptionPane.showInputDialog("Skriv inn poengsum");
+		int poeng = Integer.parseInt(input);
 		
-		Scanner sc = new Scanner(System.in);
-		int poeng;
-		
-		out.println("Skriv inn poengsum");
-		poeng = sc.nextInt();
-		
-		
-		if (poeng < 40 && poeng > -1) {			
-			out.println("Karakter F");
+
+	
+
+
+		if (poeng < 40 && poeng > -1) {
+			karakter = "F";
 		}
 		else if (poeng < 50 && poeng > 39) {
-			out.println("Karakter E");
+			karakter = "E";
 		}
 		else if (poeng < 60 && poeng > 49) {
-			out.println("Karakter D");
+			karakter = "D";
 		}
 		else if (poeng < 80 && poeng > 59) {
-			out.println("Karakter C");
+			karakter = "C";
 		}
 		else if (poeng < 90 && poeng > 79) {
-			out.println("Karakter B");
+			karakter = "B";
 		}
 		else if (poeng < 101 && poeng > 89) {
-			out.println("Karakter A");
+			karakter = "A";
 		}
 		else {
-			out.println("Poengsummen er ugyldig.");
+			karakter = "Ugyldig";
 		}
+		
+		if (poeng <0 || poeng > 100) {
+			JOptionPane.showMessageDialog(null, "Din karakter er ugyldig, skriv inn på nytt");
+			
+		}
+		else {
 			
 		
+		JOptionPane.showMessageDialog(null, "Din karakter er " + karakter);
+		i--;
+		
+		
+			
+		}
 		
 	}
+	
+}
+
 }
